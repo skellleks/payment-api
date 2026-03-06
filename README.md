@@ -18,5 +18,9 @@ source .venv/bin/activate
 pip install -r requirements.txt
 uvicorn app.main:app --reload
 ```
+Или
+```bash
+docker compose up -d
+```
 
 Документация API: http://localhost:8000/docs
