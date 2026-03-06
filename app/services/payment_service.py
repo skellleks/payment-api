@@ -1,5 +1,7 @@
 from urllib.parse import urlencode
 
+from app.models.payment_method import PaymentMethod
+
 
 class PaymentService:
 
@@ -9,7 +11,7 @@ class PaymentService:
         amount: int,
         description: str,
         user_id: int,
-        method: str,
+        method: PaymentMethod,
         provider: str,
     ) -> str:
         base_url = "https://payment_link.com"

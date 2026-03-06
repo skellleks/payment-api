@@ -1,20 +1,20 @@
 {
   "1_month": {
-    "name": "1 месяц",
+    "name": "1 month",
     "duration_months": 1,
     "amount": 199,
-    "description": "Подписка на 1 месяц"
+    "description": "1 month subscription"
   },
   "6_months": {
-    "name": "6 месяцев",
+    "name": "6 months",
     "duration_months": 6,
     "amount": 849,
-    "description": "Подписка на 6 месяцев"
+    "description": "6 months subscription"
   },
   "12_months": {
-    "name": "1 год",
+    "name": "1 year",
     "duration_months": 12,
     "amount": 1699,
-    "description": "Подписка на 1 год"
+    "description": "1 year subscription"
   }
 }

@@ -1,3 +1,4 @@
+from app.models.payment_method import PaymentMethod
 from app.payment.providers import PaymentProvider, register_provider
 
 
@@ -5,5 +6,5 @@ from app.payment.providers import PaymentProvider, register_provider
 class Provider1(PaymentProvider):
 
     @property
-    def supported_methods(self) -> list[str]:
-        return ["card", "sbp"]
+    def supported_methods(self) -> list[PaymentMethod]:
+        return [PaymentMethod.CARD, PaymentMethod.SBP]

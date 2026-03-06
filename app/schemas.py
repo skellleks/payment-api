@@ -1,10 +1,12 @@
 from pydantic import BaseModel
 
+from app.models.payment_method import PaymentMethod
+
 
 class CreatePaymentRequest(BaseModel):
     plan_id: str
     user_id: int
-    method: str
+    method: PaymentMethod
     provider: str
 
 

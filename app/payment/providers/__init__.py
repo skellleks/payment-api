@@ -1,11 +1,13 @@
 from abc import ABC, abstractmethod
 
+from app.models.payment_method import PaymentMethod
+
 
 class PaymentProvider(ABC):
 
     @property
     @abstractmethod
-    def supported_methods(self) -> list[str]:
+    def supported_methods(self) -> list[PaymentMethod]:
         ...
 
 

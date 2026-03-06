@@ -12,16 +12,16 @@ router = APIRouter(prefix="/api/payments", tags=["payments"])
 def create_payment(request: CreatePaymentRequest):
     plan = plan_service.get_plan(request.plan_id)
     if not plan:
-        raise HTTPException(status_code=400, detail="Неизвестный тариф")
+        raise HTTPException(status_code=400, detail="Unknown plan")
 
     provider = get_provider(request.provider)
     if not provider:
-        raise HTTPException(status_code=400, detail="Неизвестный провайдер")
+        raise HTTPException(status_code=400, detail="Unknown provider")
 
     if request.method not in provider.supported_methods:
         raise HTTPException(
             status_code=400,
-            detail=f"Провайдер '{request.provider}' не поддерживает метод '{request.method}'",
+            detail=f"Provider '{request.provider}' does not support method '{request.method}'",
         )
 
     payment_url = PaymentService.make_new_payment(
