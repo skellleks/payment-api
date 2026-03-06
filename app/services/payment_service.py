@@ -4,7 +4,6 @@ from app.models.payment_method import PaymentMethod
 
 
 class PaymentService:
-
     @classmethod
     def make_new_payment(
         cls,

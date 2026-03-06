@@ -5,7 +5,6 @@ T = TypeVar("T")
 
 
 class BaseRepository(ABC, Generic[T]):
-
     @abstractmethod
     def get(self, id: str) -> T | None: ...
 

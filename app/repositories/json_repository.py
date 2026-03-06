@@ -9,7 +9,6 @@ T = TypeVar("T")
 
 
 class JsonRepository(BaseRepository[T]):
-
     def __init__(self, path: str | Path, entity_cls: Type[T]):
         self._path = Path(path)
         self._entity_cls = entity_cls
@@ -19,16 +18,10 @@ class JsonRepository(BaseRepository[T]):
     def _load(self):
         with open(self._path, encoding="utf-8") as f:
             data = json.load(f)
-        self._items = {
-            key: self._entity_cls(**fields)
-            for key, fields in data.items()
-        }
+        self._items = {key: self._entity_cls(**fields) for key, fields in data.items()}
 
     def _save(self):
-        data = {
-            key: asdict(item)
-            for key, item in self._items.items()
-        }
+        data = {key: asdict(item) for key, item in self._items.items()}
         with open(self._path, "w", encoding="utf-8") as f:
             json.dump(data, f, ensure_ascii=False, indent=2)
 

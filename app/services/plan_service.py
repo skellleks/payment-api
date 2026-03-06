@@ -6,7 +6,6 @@ from app.repositories.base import BaseRepository
 
 
 class PlanService:
-
     def __init__(self, repository: BaseRepository[SubscriptionPlan]):
         self._repository = repository
 

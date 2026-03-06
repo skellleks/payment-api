@@ -4,11 +4,9 @@ from app.models.payment_method import PaymentMethod
 
 
 class PaymentProvider(ABC):
-
     @property
     @abstractmethod
-    def supported_methods(self) -> list[PaymentMethod]:
-        ...
+    def supported_methods(self) -> list[PaymentMethod]: ...
 
 
 _registry: dict[str, PaymentProvider] = {}
@@ -18,6 +16,7 @@ def register_provider(name: str):
     def decorator(cls):
         _registry[name] = cls()
         return cls
+
     return decorator
 
 
